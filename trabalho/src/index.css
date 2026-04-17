@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700;800;900&family=Manrope:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Lexend", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-label: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary: #cc97ff;
+  --color-primary-dim: #9c48ea;
+  --color-primary-container: #c284ff;
+  --color-surface: #0e0e0e;
+  --color-surface-container: #1a1a1a;
+  --color-surface-container-low: #131313;
+  --color-surface-container-high: #20201f;
+  --color-surface-container-highest: #262626;
+  --color-on-surface: #ffffff;
+  --color-on-surface-variant: #adaaaa;
+  --color-secondary: #e4e1e5;
+  --color-secondary-dim: #d6d3d7;
+  --color-outline: #767575;
+  --color-outline-variant: #484847;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .text-outline {
+    -webkit-text-stroke: 1px var(--color-outline-variant);
+    color: transparent;
+  }
+
+  .energy-marquee {
+    animation: marquee 20s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}
