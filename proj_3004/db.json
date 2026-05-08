@@ -1,0 +1,23 @@
+{
+  "usuarios": [
+    {
+      "nome": "Rafael da Silva Figueiredo",
+      "cpf": "03649583089",
+      "endereco": "Avenida Presidente Getúlio Vargas, 302",
+      "telefone": "55996930437",
+      "senha": "senha123",
+      "id": "IYCqNhGyr1I"
+    }
+  ],
+  "tickets": [
+    {
+      "titulo": "sei la",
+      "descricao": "mt coisa",
+      "autor": "Rafael da Silva Figueiredo",
+      "data": "08/05/2026, 18:29:30",
+      "status": "Aberto",
+      "id": "J-F94Yo0V5o"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

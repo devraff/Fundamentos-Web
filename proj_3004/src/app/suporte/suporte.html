@@ -1,14 +1,78 @@
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-  <div class="backdrop-blur-lg bg-gray-800/30 p-6 rounded-xl border border-gray-700 hover:border-purple-400 transition-all">
-    <h3 class="text-purple-300 font-bold mb-2">Central de Ajuda</h3>
-    <p class="text-gray-400">Acesse nossos tutoriais e documentação técnica para dúvidas rápidas.</p>
+<div class="max-w-6xl mx-auto p-6">
+  <!-- Cabeçalho de Boas-vindas -->
+  <div class="mb-10 animate-in fade-in duration-700">
+    <h1 class="text-3xl font-bold text-white">Olá, {{ usuarioLogado?.nome }}</h1>
+    <p class="text-purple-400">Como podemos ajudar você hoje?</p>
   </div>
-  
-  <div class="backdrop-blur-lg bg-purple-900/20 p-6 rounded-xl border border-purple-500/40">
-    <h3 class="text-white font-bold mb-2">Falar com Consultor</h3>
-    <p class="text-gray-300 mb-4">Tempo médio de espera: 5 minutos.</p>
-    <button class="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-md border border-white/20 transition-all">
-      Abrir Ticket
-    </button>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    
+    <!-- COLUNA DA ESQUERDA: Ações e Formulário -->
+    <div class="lg:col-span-1 space-y-6">
+      
+      <!-- Card Original: Central de Ajuda -->
+      <div class="backdrop-blur-lg bg-gray-800/30 p-6 rounded-xl border border-gray-700 hover:border-purple-400 transition-all">
+        <h3 class="text-purple-300 font-bold mb-2">Central de Ajuda</h3>
+        <p class="text-gray-400 text-sm">Acesse nossos tutoriais e documentação técnica para dúvidas rápidas.</p>
+      </div>
+
+      <!-- Card Adaptado: Falar com Consultor (Agora com Formulário) -->
+      <div class="backdrop-blur-lg bg-purple-900/20 p-6 rounded-xl border border-purple-500/40">
+        <h3 class="text-white font-bold mb-2">Novo Ticket de Suporte</h3>
+        <p class="text-gray-300 text-xs mb-4">Tempo médio de resposta: 5 minutos.</p>
+        
+        <form [formGroup]="ticketForm" (ngSubmit)="enviarTicket()" class="space-y-3">
+          <input formControlName="titulo" type="text" placeholder="Assunto curto"
+            class="w-full bg-black/40 border border-white/10 rounded-md p-2 text-sm text-white outline-none focus:border-purple-400 transition-all">
+          
+          <textarea formControlName="descricao" placeholder="O que está acontecendo?" rows="3"
+            class="w-full bg-black/40 border border-white/10 rounded-md p-2 text-sm text-white outline-none focus:border-purple-400 transition-all"></textarea>
+          
+          <button type="submit" [disabled]="ticketForm.invalid"
+            class="w-full px-4 py-2 bg-purple-600 hover:bg-purple-500 disabled:bg-gray-700 text-white rounded-md border border-white/10 transition-all font-semibold text-sm">
+            Enviar para Consultor
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- COLUNA DA DIREITA: Feed de Tickets -->
+    <div class="lg:col-span-2 space-y-4">
+      <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+        <span class="w-2 h-2 bg-purple-500 rounded-full animate-ping"></span>
+        Feed de Atendimentos
+      </h3>
+
+      <!-- Estado Vazio -->
+      <div *ngIf="tickets.length === 0" class="text-gray-500 bg-white/5 p-10 rounded-xl border border-dashed border-white/10 text-center">
+        Nenhuma dúvida postada ainda. Seja o primeiro!
+      </div>
+
+      <!-- Lista de Tickets -->
+      <div *ngFor="let t of tickets" 
+           class="animate-in slide-in-from-bottom-4 duration-500 backdrop-blur-md bg-gray-800/40 p-5 rounded-xl border border-white/5 hover:border-purple-500/30 transition-all shadow-lg">
+        
+        <div class="flex justify-between items-start mb-3">
+          <span class="px-2 py-0.5 bg-purple-900/50 text-purple-300 text-[10px] uppercase font-black rounded-full border border-purple-500/30">
+            {{ t.status }}
+          </span>
+          <span class="text-[10px] text-gray-500 font-mono">{{ t.data }}</span>
+        </div>
+
+        <h4 class="text-lg font-bold text-white mb-2">{{ t.titulo }}</h4>
+        <p class="text-gray-400 text-sm mb-4 leading-relaxed">{{ t.descricao }}</p>
+
+        <div class="flex items-center gap-3 pt-3 border-t border-white/5">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-600 to-gray-700 flex items-center justify-center text-white font-bold text-xs shadow-inner">
+            {{ t.autor[0] }}
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xs text-gray-300 font-medium">{{ t.autor }}</span>
+            <span class="text-[10px] text-gray-500">Aluno(a)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
