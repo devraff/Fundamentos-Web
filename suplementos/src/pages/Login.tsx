@@ -27,7 +27,7 @@ export default function Login() {
     <main className="min-h-screen flex items-center justify-center relative overflow-hidden bg-surface">
       {/* Background Hero */}
       <div className="absolute inset-0 z-0">
-        <img
+        <img 
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_MsJIdjlY-My2fOwGcJBwUFE06gY_qJ4DWnRipX3oCbZv7qY8rLAuh7DOWmoMsVvf6T7LdgtytJLO5L44k_ymgvL30iNAJSrC5YZRNOTI7SskK0MxJ7xrJgT0j0PdKRE_10kk93xq3M_4T_WVaBBpaSNBrBuIVhkVMrjiy3492wHBqKrDzCXwKv5CLgI7Mg0ZkAMYJQQs8Li5GlSI578Q2v7z-sEI5ocLfYQUC9CKZopDV0Kx4SHlXMwEno-7BoSJYUFXS_2yXIA"
           className="w-full h-full object-cover opacity-30 grayscale"
           alt="Athlete background"
@@ -44,7 +44,7 @@ export default function Login() {
       </div>
 
       {/* Login Container */}
-      <motion.div
+      <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -61,11 +61,11 @@ export default function Login() {
             <div className="space-y-2">
               <label className="font-label text-[10px] tracking-[0.2em] uppercase text-secondary-dim px-1" htmlFor="email">Identity</label>
               <div className="group relative">
-                <input
-                  className="w-full bg-surface-container-highest border-none p-4 text-sm font-label tracking-wider placeholder:text-outline focus:ring-0 transition-all border-b-2 border-transparent focus:border-primary text-on-surface"
-                  id="email"
-                  placeholder="EMAIL ADDRESS"
-                  type="email"
+                <input 
+                  className="w-full bg-surface-container-highest border-none p-4 text-sm font-label tracking-wider placeholder:text-outline focus:ring-0 transition-all border-b-2 border-transparent focus:border-primary text-on-surface" 
+                  id="email" 
+                  placeholder="EMAIL ADDRESS" 
+                  type="email" 
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -82,11 +82,11 @@ export default function Login() {
                 <a className="font-label text-[10px] tracking-[0.2em] uppercase text-primary hover:text-white transition-colors" href="#">Forgot?</a>
               </div>
               <div className="group relative">
-                <input
-                  className="w-full bg-surface-container-highest border-none p-4 text-sm font-label tracking-wider placeholder:text-outline focus:ring-0 transition-all border-b-2 border-transparent focus:border-primary text-on-surface"
-                  id="password"
-                  placeholder="PASSWORD"
-                  type="password"
+                <input 
+                  className="w-full bg-surface-container-highest border-none p-4 text-sm font-label tracking-wider placeholder:text-outline focus:ring-0 transition-all border-b-2 border-transparent focus:border-primary text-on-surface" 
+                  id="password" 
+                  placeholder="PASSWORD" 
+                  type="password" 
                   required
                   value={formData.password}
                   onChange={(e) => setFormData({ ...formData, password: e.target.value })}
@@ -97,8 +97,8 @@ export default function Login() {
               </div>
             </div>
 
-            <button
-              className="w-full bg-gradient-to-r from-primary to-primary-dim text-on-surface py-5 font-headline font-bold tracking-tighter text-lg uppercase shadow-[0px_4px_20px_rgba(204,151,255,0.3)] active:scale-[0.98] transition-transform"
+            <button 
+              className="w-full bg-gradient-to-r from-primary to-primary-dim text-on-surface py-5 font-headline font-bold tracking-tighter text-lg uppercase shadow-[0px_4px_20px_rgba(204,151,255,0.3)] active:scale-[0.98] transition-transform" 
               type="submit"
             >
               Initiate Session

@@ -7,6 +7,23 @@
       "telefone": "55996930437",
       "senha": "senha123",
       "id": "IYCqNhGyr1I"
+    },
+    {
+      "nome": "rafael",
+      "cpf": "03649583088",
+      "endereco": "Avenida Presidente Getúlio Vargas, 302",
+      "telefone": "55996930437",
+      "senha": "senha123",
+      "id": "XUqtF96dNaI"
+    },
+    {
+      "nome": "rafael",
+      "usuario": "rafael.silva",
+      "cpf": "03649583089",
+      "endereco": "rafael-silva_f5@hotmail.com",
+      "telefone": "55996930437",
+      "senha": "senhor02",
+      "id": "JKYoKEnBhh4"
     }
   ],
   "tickets": [

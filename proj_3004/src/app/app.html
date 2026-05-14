@@ -1,11 +1,20 @@
 <div class="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-black text-white">
   <nav class="sticky top-0 z-50 backdrop-blur-md bg-white/10 border-b border-white/10 p-4">
     <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-xl font-bold tracking-wider">SISTEMA</h1>
+      <h1 class="text-xl font-bold tracking-wider">SAC</h1>
       <div class="space-x-6">
-        <a routerLink="/cadastro" routerLinkActive="text-purple-400 font-bold" class="text-gray-300 hover:text-white transition-colors cursor-pointer">Cadastro</a>
-        <a routerLink="/login" routerLinkActive="text-purple-400 font-bold" class="text-gray-300 hover:text-white transition-colors cursor-pointer">Login</a>
-        <a routerLink="/suporte" routerLinkActive="text-purple-400 font-bold" class="text-gray-300 hover:text-white transition-colors cursor-pointer">Suporte</a>
+        @if (!estaLogado()) {
+          <a routerLink="/login" class="text-gray-300 hover:text-white">Login</a>
+          <a routerLink="/cadastro" class="text-gray-300 hover:text-white">Cadastro</a>
+        }
+        @if (estaLogado()) {
+          <a routerLink="/suporte" class="text-gray-300 hover:text-white">Suporte</a>
+          <button
+            (click)="logout()"
+            class="px-4 py-1.5 bg-red-500/20 hover:bg-red-500/40 text-red-400 border border-red-500/50 rounded-lg text-sm transition-all">
+            Sair
+          </button>
+        }
       </div>
     </div>
   </nav>

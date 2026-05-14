@@ -1,11 +1,21 @@
-import { Component, signal } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('proj_3004');
+  constructor(private router: Router) {}
+
+  // Função para checar se o usuário está logado (usada no HTML)
+  estaLogado(): boolean {
+    return localStorage.getItem('usuarioLogado') !== null;
+  }
+
+  logout() {
+    localStorage.removeItem('usuarioLogado');
+    this.router.navigate(['/login']);
+  }
 }

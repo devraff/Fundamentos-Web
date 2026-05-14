@@ -15,6 +15,13 @@
     </div>
 
     <div class="group">
+  <label class="block text-xs uppercase tracking-widest mb-1 text-purple-300/70 font-semibold">Nome de Usuário</label>
+  <input formControlName="usuario" type="text" placeholder="Ex: joao.silva" 
+    [class.border-red-500]="cadastroForm.get('usuario')?.invalid && cadastroForm.get('usuario')?.touched"
+    class="w-full bg-black/20 border border-white/10 rounded-xl p-3 text-white focus:ring-2 focus:ring-purple-500 outline-none transition-all">
+</div>
+
+    <div class="group">
       <label class="block text-xs uppercase tracking-widest mb-1 text-purple-300/70 font-semibold">CPF</label>
       <input formControlName="cpf" type="text" placeholder="000.000.000-00" 
         [class.border-red-500]="cadastroForm.get('cpf')?.invalid && cadastroForm.get('cpf')?.touched"

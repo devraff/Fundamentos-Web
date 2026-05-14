@@ -19,6 +19,7 @@ export class Cadastro { // Notei que seu print diz "Cadastro", garanta que o nom
   constructor(private fb: FormBuilder, private router: Router, private authService: AuthService) {
     this.cadastroForm = this.fb.group({
       nome: ['', [Validators.required, Validators.minLength(3)]],
+      usuario: ['', [Validators.required, Validators.minLength(3)]],
       cpf: ['', [Validators.required]],
       endereco: ['', Validators.required],
       telefone: ['', Validators.required],

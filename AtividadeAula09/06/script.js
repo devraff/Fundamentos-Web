@@ -8,7 +8,7 @@ function mult() {
     } else {
         let tabuada = '';
         for (let i = 1; i <= 10; i++) {
-            tabuada += `${result}x${i} = ${result * i}\n`;
+            tabuada += `${result} x ${i} = ${result * i}\n`;
         }
         document.getElementById('result').textContent = tabuada;
     }
