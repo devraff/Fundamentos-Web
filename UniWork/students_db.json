@@ -1,0 +1,42 @@
+[
+  {
+    "id": "std-1779425473547-376",
+    "name": "Rafael Figueiredo",
+    "cpf": "036.495.830-89",
+    "rg": "32.132.121-3",
+    "phone": "(55) 99693-0437",
+    "courseId": "biotech",
+    "address": "Avenida Presidente Getúlio Vargas, 302\napt 302",
+    "registeredAt": "2026-05-22T04:51:13.547Z"
+  },
+  {
+    "id": "std-1",
+    "name": "Gabriela Mendes Silva",
+    "cpf": "123.456.789-01",
+    "rg": "12.345.678-9",
+    "phone": "(11) 98765-4321",
+    "courseId": "biotech",
+    "address": "Rua das Flores, 456, Moema, São Paulo - SP",
+    "registeredAt": "2026-05-18T10:30:00Z"
+  },
+  {
+    "id": "std-2",
+    "name": "Arthur de Oliveira",
+    "cpf": "987.654.321-00",
+    "rg": "98.765.432-1",
+    "phone": "(21) 99888-7766",
+    "courseId": "ai",
+    "address": "Av. Atlântica, 1020, Copacabana, Rio de Janeiro - RJ",
+    "registeredAt": "2026-05-20T14:45:00Z"
+  },
+  {
+    "id": "std-3",
+    "name": "Sophia Vance Alvarez",
+    "cpf": "455.667.112-99",
+    "rg": "44.555.666-7",
+    "phone": "(31) 97711-2233",
+    "courseId": "medical",
+    "address": "Rua Paraíba, 789, Savassi, Belo Horizonte - MG",
+    "registeredAt": "2026-05-21T09:15:00Z"
+  }
+]

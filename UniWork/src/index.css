@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Academia Excellence Visual System Colors */
+  --color-brand-primary: #340075;
+  --color-brand-primary-container: #4c1d95;
+  --color-brand-on-primary-container: #b994ff;
+  --color-brand-surface: #f8f9ff;
+  --color-brand-surface-lowest: #ffffff;
+  --color-brand-surface-low: #eff4ff;
+  --color-brand-surface-container: #e5eeff;
+  --color-brand-surface-highest: #d3e4fe;
+  --color-brand-on-surface: #0b1c30;
+  --color-brand-on-surface-variant: #4a4452;
+  --color-brand-bg: #f8f9ff;
+  --color-brand-outline-variant: #ccc3d4;
+  --color-brand-secondary: #5d5f5f;
+  --color-brand-surface-dim: #cbdbf5;
+
+  /* Soft Border Radius */
+  --radius-custom-lg: 0.25rem;
+  --radius-custom-xl: 0.5rem;
+  --radius-custom-full: 0.75rem;
+}
+
+@layer utilities {
+
+  /* Dynamic focus ring consistent with Google Workspace */
+  .academic-ring {
+    outline: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .academic-ring:focus {
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-color-brand-primary);
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  }
+}
+
+/* Base resets & custom scrollbar to match high-fidelity portal design */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-brand-bg);
+  color: var(--color-brand-on-surface);
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Form mask text fields styling */
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8;
+}

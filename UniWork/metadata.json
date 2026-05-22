@@ -1,0 +1,6 @@
+{
+  "name": "Academia Excellence",
+  "description": "Um portal institucional da Academia Excellence com matrículas de estudantes, cadastro de professores, catálogo de cursos e interface inteiramente em Português (PT-BR).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
